@@ -1,0 +1,78 @@
+name: Daily School Dashboard Scrape
+
+on:
+  schedule:
+    - cron: '30 11 * * *'   # 11:30 UTC = 5:00pm IST every day
+  workflow_dispatch:          # manual trigger from GitHub UI
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60       # abort if it hangs
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright + Chromium
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Run Teams scraper
+        env:
+          CHILD1_NAME:     ${{ secrets.CHILD1_NAME }}
+          CHILD1_EMAIL:    ${{ secrets.CHILD1_EMAIL }}
+          CHILD1_PASSWORD: ${{ secrets.CHILD1_PASSWORD }}
+          CHILD2_NAME:     ${{ secrets.CHILD2_NAME }}
+          CHILD2_EMAIL:    ${{ secrets.CHILD2_EMAIL }}
+          CHILD2_PASSWORD: ${{ secrets.CHILD2_PASSWORD }}
+        run: python3 teams_scraper.py
+
+      - name: Push dashboard_data.json to data branch
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git fetch origin
+
+          # Switch to (or create) the data branch
+          git checkout data 2>/dev/null || git checkout -b data
+
+          # Copy the freshly generated file into this branch
+          cp $GITHUB_WORKSPACE/dashboard_data.json ./dashboard_data.json
+
+          git add dashboard_data.json
+          git diff --cached --quiet && echo "No changes to commit" || \
+            git commit -m "Data: $(date -u '+%Y-%m-%d %H:%M UTC')"
+
+          git push origin data --force
+
+      - name: Notify success
+        if: success()
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          curl -s \
+            -d "✅ School dashboard updated $(date -u '+%Y-%m-%d %H:%M UTC')" \
+            -H "Title: Dashboard Updated" \
+            -H "Priority: default" \
+            "https://ntfy.sh/${NTFY_TOPIC}" || true
+
+      - name: Notify failure
+        if: failure()
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          curl -s \
+            -d "⚠️ School dashboard scraper FAILED $(date -u '+%Y-%m-%d %H:%M UTC')" \
+            -H "Title: Dashboard Error" \
+            -H "Priority: high" \
+            "https://ntfy.sh/${NTFY_TOPIC}" || true

@@ -1,0 +1,7 @@
+.env
+*.pkl
+child1_session.pkl
+child2_session.pkl
+*.png
+__pycache__/
+dashboard_data.json
