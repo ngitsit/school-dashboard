@@ -43,11 +43,14 @@ jobs:
           git config user.name "GitHub Action"
           git fetch origin
 
+          # Stash the generated file before switching branches
+          cp dashboard_data.json /tmp/dashboard_data.json
+
           # Switch to (or create) the data branch
           git checkout data 2>/dev/null || git checkout -b data
 
-          # Copy the freshly generated file into this branch
-          cp $GITHUB_WORKSPACE/dashboard_data.json ./dashboard_data.json
+          # Restore the file from temp
+          cp /tmp/dashboard_data.json dashboard_data.json
 
           git add dashboard_data.json
           git diff --cached --quiet && echo "No changes to commit" || \
