@@ -756,9 +756,9 @@ def scrape_child(pw, child: dict) -> dict:
 
     try:
         browser = pw.chromium.launch(
-            channel="chrome", headless=False, args=["--start-maximized"])
+            channel="chrome", headless=True, args=["--start-maximized"])
     except Exception:
-        browser = pw.chromium.launch(headless=False, args=["--start-maximized"])
+        browser = pw.chromium.launch(headless=True, args=["--start-maximized"])
 
     context  = browser.new_context(viewport=None)
     page     = context.new_page()
