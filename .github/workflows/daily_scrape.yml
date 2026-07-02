@@ -52,7 +52,7 @@ jobs:
           # Restore the file from temp
           cp /tmp/dashboard_data.json dashboard_data.json
 
-          git add dashboard_data.json
+          git add -f dashboard_data.json
           git diff --cached --quiet && echo "No changes to commit" || \
             git commit -m "Data: $(date -u '+%Y-%m-%d %H:%M UTC')"
 
