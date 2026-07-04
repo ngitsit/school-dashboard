@@ -1,0 +1,348 @@
+{
+  "extracted_at": "2026-07-04T06:43:12+05:30",
+  "source": "github_actions",
+  "children": {
+    "Mihika": {
+      "homework": [
+        {
+          "subject": "FLE",
+          "description": "Complete the worksheets uploaded under classwork",
+          "due_date": null,
+          "urgency": "medium",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "FLE (French)",
+          "description": "Annotate the text while reading Unit 1.3",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Physics",
+          "description": "Complete WB Ex 3.1 ABC",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Math",
+          "description": "Complete workbook exercise 4.1",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Physics",
+          "description": "Complete WB Ex: 3.1 A,B",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Art",
+          "description": "Find at least 4 objects that are basic forms and set them up in an interesting composition and create a pencil drawing from direct observation",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Community Service",
+          "description": "Fill in reflection form about community service initiatives - share feedback on experiences, what was enjoyed/meaningful, challenges faced, and suggestions for improvement",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        }
+      ],
+      "parent_actions": [
+        {
+          "action": "Submit Expression of Interest Form for TCS InQuizitive 2026 quiz competition if Mihika is interested in participating",
+          "due_date": "26 Jun 2026",
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "action": "Fill out Community volunteer registration form to indicate interest in Middle School mentorship initiatives (Green Awareness Campaign, Sugar Awareness, etc.)",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "action": "Check the folder for sugar awareness pictures and inform teacher if any section is pending",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "action": "Review First Aid For All Initiative volunteer opportunity and discuss with Mihika if interested in volunteering",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        }
+      ],
+      "events": [
+        {
+          "name": "Grade 8E Class",
+          "date": "04 Jul 2026",
+          "details": "Live class meeting with Mr. Devanjay",
+          "preparation": "Join meeting via Teams link",
+          "source_platform": "Teams"
+        },
+        {
+          "name": "TCS InQuizitive 2026",
+          "date": null,
+          "details": "National-level school quiz competition covering Current Affairs, Science & Technology, AI & Innovation, History, Sports, Environment & Sustainability, Arts & Culture, and General Knowledge. Team participation with a friend.",
+          "preparation": "Complete Expression of Interest Form by 26 Jun 2026",
+          "source_platform": "Teams"
+        },
+        {
+          "name": "Lit Sanctum 2026-27 Preliminary Round",
+          "date": null,
+          "details": "Preliminary round results announced. Finalists have been selected. Final round instructions will be shared with finalists shortly.",
+          "preparation": null,
+          "source_platform": "Teams"
+        },
+        {
+          "name": "Thanksgiving Day Volunteering Initiative",
+          "date": null,
+          "details": "Middle school students (like Mihika) are invited to volunteer as mentors to lead 8-10 minute sessions on gratitude for Early Years to Grade 2 students. Sessions will be held during Class Teacher Time (CTT) on 26th November (EY classes) and 27th November (Grade 1-2 classes). Volunteers can team up in pairs and visit one or two classes per day. Students will help young learners understand the importance of gratitude before they deliver handmade greeting cards to support staff on 27th or 28th November.",
+          "preparation": "Prepare to lead a child-friendly session using a simple PPT about gratitude; can invite friends to form pairs",
+          "source_platform": "Teams"
+        },
+        {
+          "name": "Green Awareness Campaign Mentorship Initiative",
+          "date": null,
+          "details": "Middle School volunteers will mentor Early Years and Primary learners in environmental responsibility and sustainability. Includes hands-on sapling/seed planting activity and PPT presentation about environmental protection.",
+          "preparation": "Sessions during CTT; specific dates to be communicated later",
+          "source_platform": "Teams"
+        },
+        {
+          "name": "Sugar Awareness Mentorship Initiative",
+          "date": null,
+          "details": "Middle School volunteers will mentor students on making healthier choices and understanding the impact of excessive sugar consumption on well-being.",
+          "preparation": "Sessions during CTT; specific dates to be communicated later",
+          "source_platform": "Teams"
+        }
+      ],
+      "fyi": [
+        {
+          "summary": "Humanities lesson included plotting climate graph on graph paper",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "PA (Performing Arts) lessons covered: Drums - identifying drum kit parts and sight-reading; Electronic Synthesiser - hand coordination exercises and G major scale; Guitar - chromatic scale practice (target: 20 times non-stop)",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Bio/Chem class notes were taken in notebooks",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Math lessons covered multiplying and dividing integers and decimals by positive and negative powers of 10, and started textbook exercise 4.1",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Physics lesson completed topic 3.1 questions with notebook correction",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "TCS InQuizitive 2026 is a prestigious national-level quiz competition open to students. Mihika can participate as part of a two-person team to represent Sancta Maria school.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Mihika participated in Lit Sanctum 2026-27 Preliminary Round. Results have been announced and finalists have been notified.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Physics: Learners completed class activity of calculating volume of regular and irregular objects",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Vowels and Matras practice done in the Notebook",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Computing: Group activity on understanding tasks carried by operating system",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Humanities: Learners completed climate graph on graph paper and learnt how to interpret the graph",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Math: Learners introduced to Standard form for representing large and small numbers with notebook work",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Thanksgiving Day celebration planned for 27th-28th November. Early Years to Grade 2 students are making greeting cards for house-help, drivers, and support staff under art teacher guidance.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Multiple new mentorship initiatives being planned for March for Early Years and Primary learners; additional initiatives being planned and will be communicated later",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "EY3B is missing - student report in Middle school Volunteers team",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Teachers have been informed and will upload content soon",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Pictures from EY3A and B classes have been added to the main folder. Check them out today.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Sugar awareness activity for EY learners scheduled for Tuesday, 31st March during CTT (8:30-8:50 AM). Mihika is involved as a volunteer. Reference PPT: https://docs.google.com/presentation/d/1X-WVaOefDSmVbDD9Qg7KZCpewlbKU-n56T6GVBKyHUc/edit?usp=sharing",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Middle School Volunteers program wrapping up for the year. Teachers Chaitali and Rozy Ma'am requesting student reflections on community service initiatives throughout the year.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Cambridge Mathematics Paper 2 requires Casio fx-991ES PLUS (2nd Edition) scientific calculator. Purchase link provided for new learners or those needing replacement.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Diagnostic Test for Grade 8 Hindi was scheduled for 24 Jun 2026 (past event - not included in upcoming events)",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "FLE vocabulary list for Mihika (Grade 8) - Words and meanings: taciturn (reserved), loquacious (talkative), obnoxious (annoying), serendipity (lucky chance), abominable (terrible), acrimonious (bitter/hostile)",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "FLE Unit 1.1 PPT has been uploaded under Classwork/Term 1 resources/Stage 9.1.1 PPT for reference",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "FLE class resource shared: The Left Hand of Darkness by Ursula K. Le Guin Plot Summary from LitCharts",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Vocab Voyage vocabulary learning activity completed from 17 Jun 2026 to 19 Jun 2026. Words covered: atrocities, amplify, antagonism with meanings, usage examples, and synonyms.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "PPT from today's FLE class has been uploaded for reference",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Grade 8 Future Pathways: First Aid For All Initiative - youth-led volunteer opportunity launched by alumna Ms. Aadya Agarwal. Students can register to volunteer and learn life-saving first aid skills. No prior medical background required. Registration form available.",
+          "source_platform": "Teams"
+        }
+      ],
+      "overview": [
+        "\ud83d\udcdd FLE: Complete the worksheets uploaded under classwork",
+        "\ud83d\udcdd FLE (French): Annotate the text while reading Unit 1.3",
+        "\ud83d\udcdd Physics: Complete WB Ex 3.1 ABC",
+        "\ud83d\udcdd Math: Complete workbook exercise 4.1"
+      ]
+    },
+    "Ananya": {
+      "homework": [
+        {
+          "subject": "English",
+          "description": "Read and Reflect: Science Fiction story 'LAFFF'",
+          "due_date": null,
+          "urgency": "medium",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Science",
+          "description": "Explore and construct both series and parallel circuits using Circuit Construction Kit: DC",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "English",
+          "description": "Research a favourite author and create an Author Spotlight chart on chart paper including: author's name and picture, short biography, notable works, favourite book and why, a meaningful quote, 3-5 interesting facts about the author",
+          "due_date": null,
+          "urgency": "low",
+          "source_platform": "Teams"
+        }
+      ],
+      "parent_actions": [
+        {
+          "action": "Complete and submit Club Selection Form for Ananya",
+          "due_date": "29 Jun 2026",
+          "urgency": "high",
+          "source_platform": "Teams"
+        },
+        {
+          "action": "Ensure Ananya submits nomination for Lit Sanctum's Battle of the Skits preliminary round if interested",
+          "due_date": "04 Jul 2026",
+          "urgency": "high",
+          "source_platform": "Teams"
+        },
+        {
+          "action": "Fill out Expression of Interest form for Lit Sanctum's onstage event 'Battle of the Skits' or comment 'I am interested' if form is inaccessible",
+          "due_date": "18 Jun 2026",
+          "urgency": "low",
+          "source_platform": "Teams"
+        }
+      ],
+      "events": [
+        {
+          "name": "Battle of the Skits - Lit Sanctum Onstage Event",
+          "date": null,
+          "details": "Expression of Interest form deadline is 18 Jun 2026 at 10:00 pm",
+          "preparation": "Complete Expression of Interest form or comment interest",
+          "source_platform": "Teams"
+        },
+        {
+          "name": "Lit Sanctum's Battle of the Skits - Nominations Deadline",
+          "date": "04 Jul 2026",
+          "details": "Preliminary round nominations close at 2:30 p.m.",
+          "preparation": "Student should submit nomination before 2:30 p.m. if participating",
+          "source_platform": "Teams"
+        },
+        {
+          "name": "Battle of the Skits Preliminary Round",
+          "date": null,
+          "details": "Ananya is participating in pairs for Lit Sanctum 2026. Preliminary round auditions were scheduled for 29th and 30th June 2026. Individual learners will be assessed on voice modulation, expression, body language, confidence, creativity, and preparation. Evaluation criteria include: clear message/lesson, voice and expression, body language and movement, teamwork, creativity and humour, preparation and timing.",
+          "preparation": "Ananya should work with her partner during school hours to plan the skit, work on scripts, demonstrate strong voice modulation, expression, body language, confidence, creativity, and preparation.",
+          "source_platform": "Teams"
+        },
+        {
+          "name": "Lit Sanctum Week - Author Spotlight Literary Display",
+          "date": null,
+          "details": "Grade 5 learners will present completed Author Spotlight charts as part of a vibrant literary display celebrating authors. This is not a competition but an inclusive event where every learner's work contributes to the display.",
+          "preparation": "Support child in researching and creating the Author Spotlight chart with required elements: author name and picture, biography, notable works, favourite book explanation, author quote, and interesting facts",
+          "source_platform": "Teams"
+        }
+      ],
+      "fyi": [
+        {
+          "summary": "Annual club model adopted for 2026-27. Each club has limited seats, allocated on first-come, first-served basis. Parents encouraged to explore club options with child. Some clubs aligned with ISP programmes. ISP Artist and Chess Masters open to all Primary learners with progression through rounds based on performance.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Audition dates for Battle of the Skits Preliminary Round have been revised to 29th and 30th June 2026. Some learners are grouped into trios where even pairing was not possible. Strongest individual performers from each house will advance to the Grand Finale.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Weekly reading homework will be uploaded every Wednesday under 'Read and Reflect' module in English Teams Classwork tab",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Author Spotlight is part of Lit Sanctum 2026 alongside Battle of the Skits. It invites Grade 5 learners to explore books through research, reflection, and creativity to celebrate inspiring authors.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Grade 5D Mathematics: Workbooks introduced for additional home practice. Teachers will assign regular homework in workbooks. Answer keys will be uploaded to Teams after each unit completion for self-reflection. Keep workbooks at home by default unless teacher requests otherwise to reduce school bag weight.",
+          "source_platform": "Teams"
+        }
+      ],
+      "overview": [
+        "\ud83d\udd34 Complete and submit Club Selection Form for Ananya \u2014 due 29 Jun 2026",
+        "\ud83d\udd34 Ensure Ananya submits nomination for Lit Sanctum's Battle of the Skits preliminary round if interested \u2014 due 04 Jul 2026",
+        "\ud83d\udcdd English: Read and Reflect: Science Fiction story 'LAFFF'",
+        "\ud83d\udcdd Science: Explore and construct both series and parallel circuits using Circuit Construction Kit: DC"
+      ]
+    }
+  }
+}
