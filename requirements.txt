@@ -2,3 +2,4 @@ playwright
 python-dotenv
 beautifulsoup4
 requests
+anthropic>=0.25.0
