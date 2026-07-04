@@ -37,6 +37,11 @@ jobs:
           CHILD2_PASSWORD: ${{ secrets.CHILD2_PASSWORD }}
         run: python3 teams_scraper.py
 
+      - name: Run AI extractor
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 ai_extractor.py
+
       - name: Push dashboard_data.json to data branch
         run: |
           git config user.email "action@github.com"
@@ -52,7 +57,7 @@ jobs:
           # Restore the file from temp
           cp /tmp/dashboard_data.json dashboard_data.json
 
-          git add -f dashboard_data.json
+          git add -f dashboard_data.json dashboard_display.json
           git diff --cached --quiet && echo "No changes to commit" || \
             git commit -m "Data: $(date -u '+%Y-%m-%d %H:%M UTC')"
 
