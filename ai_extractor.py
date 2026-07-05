@@ -6,6 +6,7 @@ produces dashboard_display.json for Lovable to consume.
 
 import json
 import os
+import re
 import time
 from datetime import datetime, timezone
 from dotenv import load_dotenv
@@ -67,7 +68,75 @@ Rules:
 - If the message is student chat or irrelevant to a parent, return all empty arrays
 - If purely informational, use fyi only
 - Return valid JSON only, no other text whatsoever
+
+CRITICAL RULES — read carefully:
+
+1. CHILD SPECIFICITY: Only extract parent_actions where this specific child's parent needs to act.
+   If the post mentions another student by name as the subject (e.g. "Mokshitha's project",
+   "Rahul should submit"), classify as fyi only.
+
+2. DATE AWARENESS: Today is {TODAY}.
+   Only include events with future dates in the events array. Events that already happened
+   belong in fyi with prefix "Recent: ".
+
+3. EVIDENCE REQUIRED: Only extract items that are explicitly stated in the post. Do not
+   infer, assume, or generate items not present in the text. If you cannot find direct evidence
+   in the post, do not include the item.
+
+4. HOMEWORK PRECISION: Only extract homework that is explicitly assigned with words like
+   "HW:", "Homework:", "for homework", "due".
+   Do not extract classwork activities or in-class exercises as homework.
+
+5. OLD POSTS: If the post timestamp is more than 7 days before today ({TODAY}),
+   only extract future-dated events and hard deadlines. Do not extract general
+   information or volunteer opportunities from old posts.
 """
+
+
+def classify_event_by_date(event: dict) -> str:
+    date_str = event.get("date", "")
+    if not date_str:
+        return "future"
+
+    formats = ["%d %b %Y", "%Y-%m-%d", "%d %B %Y"]
+    today = datetime.now(timezone.utc).date()
+
+    for fmt in formats:
+        try:
+            event_date = datetime.strptime(date_str.strip(), fmt).date()
+            if event_date < today:
+                return "past"
+            return "future"
+        except Exception:
+            continue
+
+    return "future"
+
+
+def normalise_hw_key(hw: dict) -> str:
+    subject = hw.get("subject", "").lower().strip()
+    desc = hw.get("description", "").lower().strip()
+    desc = re.sub(r'[^a-z0-9]', '', desc)
+    return f"{subject}:{desc[:30]}"
+
+
+def is_grounded(item_text: str, source_post: str) -> bool:
+    stopwords = {
+        'the', 'a', 'an', 'and', 'or', 'for', 'to', 'in', 'of', 'with',
+        'is', 'are', 'will', 'be', 'this', 'that', 'have', 'from', 'by',
+        'at', 'on', 'as', 'it'
+    }
+
+    item_words = set(
+        w.lower() for w in item_text.split()
+        if len(w) > 3 and w.lower() not in stopwords
+    )
+    source_words = set(
+        w.lower() for w in source_post.split()
+        if len(w) > 3 and w.lower() not in stopwords
+    )
+
+    return len(item_words & source_words) >= 2
 
 
 def extract_from_post(post_text: str, team_name: str, child_name: str) -> dict:
@@ -90,7 +159,34 @@ def extract_from_post(post_text: str, team_name: str, child_name: str) -> dict:
             text = text.split("```")[1]
             if text.startswith("json"):
                 text = text[4:]
-        return json.loads(text)
+        result = json.loads(text)
+
+        # Grounding check — homework
+        grounded_homework = []
+        for hw in result.get("homework", []):
+            hw_text = f"{hw.get('subject', '')} {hw.get('description', '')}"
+            if is_grounded(hw_text, post_text):
+                grounded_homework.append(hw)
+            else:
+                result.setdefault("fyi", []).append({
+                    "summary": f"Unverified: {hw_text[:80]}"
+                })
+        result["homework"] = grounded_homework
+
+        # Grounding check — parent_actions
+        grounded_actions = []
+        for act in result.get("parent_actions", []):
+            act_text = act.get("action", "")
+            if is_grounded(act_text, post_text):
+                grounded_actions.append(act)
+            else:
+                result.setdefault("fyi", []).append({
+                    "summary": f"Unverified action: {act_text[:80]}"
+                })
+        result["parent_actions"] = grounded_actions
+
+        return result
+
     except json.JSONDecodeError:
         return {
             "homework": [],
@@ -105,26 +201,35 @@ def extract_from_post(post_text: str, team_name: str, child_name: str) -> dict:
 
 def merge_extractions(extractions: list) -> dict:
     merged = {"homework": [], "parent_actions": [], "events": [], "fyi": []}
-    seen = {"homework": set(), "parent_actions": set(), "events": set()}
+    seen_homework = set()
+    seen_actions = set()
+    seen_events = set()
 
     for ext in extractions:
         for hw in ext.get("homework", []):
-            key = hw.get("description", "")[:40].lower()
-            if key and key not in seen["homework"]:
-                seen["homework"].add(key)
+            key = normalise_hw_key(hw)
+            if key and key not in seen_homework:
+                seen_homework.add(key)
                 merged["homework"].append(hw)
 
         for act in ext.get("parent_actions", []):
             key = act.get("action", "")[:40].lower()
-            if key and key not in seen["parent_actions"]:
-                seen["parent_actions"].add(key)
+            if key and key not in seen_actions:
+                seen_actions.add(key)
                 merged["parent_actions"].append(act)
 
         for evt in ext.get("events", []):
-            key = evt.get("name", "")[:40].lower()
-            if key and key not in seen["events"]:
-                seen["events"].add(key)
-                merged["events"].append(evt)
+            classification = classify_event_by_date(evt)
+            if classification == "past":
+                merged["fyi"].append({
+                    "summary": f"Recent announcement: {evt['name']}"
+                               + (f" — {evt['date']}" if evt.get("date") else "")
+                })
+            else:
+                key = evt.get("name", "")[:40].lower()
+                if key and key not in seen_events:
+                    seen_events.add(key)
+                    merged["events"].append(evt)
 
         merged["fyi"].extend(ext.get("fyi", []))
 
@@ -179,6 +284,47 @@ def build_overview(merged: dict) -> list:
             return lines[:4]
 
     return lines[:4]
+
+
+def eval_check(display: dict) -> None:
+    today = datetime.now(timezone.utc).date()
+    issues = []
+
+    for child, data in display["children"].items():
+        for evt in data.get("events", []):
+            date_str = evt.get("date", "")
+            if date_str:
+                try:
+                    evt_date = datetime.strptime(date_str, "%d %b %Y").date()
+                    if evt_date < today:
+                        issues.append(
+                            f"⚠️  {child}: Past event in events — "
+                            f"{evt['name']} ({date_str})"
+                        )
+                except Exception:
+                    pass
+
+        hw_count = len(data.get("homework", []))
+        if hw_count > 8:
+            issues.append(
+                f"⚠️  {child}: High homework count ({hw_count}) — possible over-extraction"
+            )
+
+        for action in data.get("parent_actions", []):
+            if len(action.get("action", "")) < 10:
+                issues.append(
+                    f"⚠️  {child}: Very short parent action — possible extraction error: "
+                    f"'{action['action']}'"
+                )
+
+    if issues:
+        print("\n⚠️  EVAL WARNINGS:")
+        for issue in issues:
+            print(f"   {issue}")
+        print(f"   Total issues: {len(issues)}")
+        print(f"   Review dashboard_display.json before publishing")
+    else:
+        print("\n✅ Eval checks passed — no issues found")
 
 
 def process_child(child_name: str, child_data: dict) -> dict:
@@ -277,6 +423,8 @@ def main():
 
     print(f"\n✅ dashboard_display.json saved")
     print(f"💰 Estimated cost: ~$0.01-0.02 per run")
+
+    eval_check(display)
 
 
 if __name__ == "__main__":
