@@ -17,6 +17,16 @@ client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
 TODAY = datetime.now(timezone.utc).strftime('%d %b %Y')
 
+EVENT_KEYWORDS = [
+    'invitation', 'ceremony', 'concert',
+    'sports day', 'annual day', 'graduation',
+    'prize giving', 'investiture', 'assembly',
+    'trip', 'excursion', 'workshop', 'seminar',
+    'exhibition', 'competition', 'tournament',
+    'open day', 'parent meeting', 'ptm',
+    'felicitation', 'cultural', 'fest',
+]
+
 SYSTEM_PROMPT = f"""You are a school communication assistant for a parent with two children:
 - Mihika, Grade 8, Middle School
 - Ananya, Grade 5D, Primary School
@@ -90,6 +100,19 @@ CRITICAL RULES — read carefully:
 5. OLD POSTS: If the post timestamp is more than 7 days before today ({TODAY}),
    only extract future-dated events and hard deadlines. Do not extract general
    information or volunteer opportunities from old posts.
+
+6. EVENTS FROM EMAIL SUBJECTS: If processing an Outlook email, the subject line often
+   contains the event name directly. Treat emails with subjects containing any of
+   these words as events, not FYI:
+   - Invitation, Ceremony, Concert,
+   - Sports Day, Annual Day, Graduation,
+   - Prize Giving, Investiture, Assembly,
+   - Trip, Excursion, Workshop, Seminar,
+   - Exhibition, Competition, Tournament,
+   - Open Day, Parent Meeting, PTM
+
+   Extract the subject as the event name and the email received date as the event date
+   unless a different date is mentioned in the body.
 """
 
 
@@ -116,8 +139,16 @@ def classify_event_by_date(event: dict) -> str:
 def normalise_hw_key(hw: dict) -> str:
     subject = hw.get("subject", "").lower().strip()
     desc = hw.get("description", "").lower().strip()
-    desc = re.sub(r'[^a-z0-9]', '', desc)
-    return f"{subject}:{desc[:30]}"
+
+    stopwords = {
+        'the', 'and', 'for', 'with', 'from', 'that', 'this', 'are', 'about',
+        'your', 'including', 'complete', 'using', 'both', 'one', 'two',
+        'three', 'four', 'five'
+    }
+
+    words = re.findall(r'[a-z]{3,}', desc)
+    keywords = [w for w in words if w not in stopwords][:5]
+    return f"{subject}:{''.join(keywords)}"
 
 
 def is_grounded(item_text: str, source_post: str) -> bool:
@@ -137,6 +168,33 @@ def is_grounded(item_text: str, source_post: str) -> bool:
     )
 
     return len(item_words & source_words) >= 2
+
+
+def reclassify_fyi_as_events(merged: dict) -> dict:
+    remaining_fyi = []
+    reclassified = 0
+
+    for fyi_item in merged.get("fyi", []):
+        summary = fyi_item.get("summary", "").lower()
+        is_event = any(kw in summary for kw in EVENT_KEYWORDS)
+
+        if is_event:
+            merged["events"].append({
+                "name": fyi_item.get("summary", "")[:100],
+                "date": None,
+                "details": "",
+                "preparation": None,
+                "source_platform": fyi_item.get("source_platform", "Email"),
+            })
+            reclassified += 1
+        else:
+            remaining_fyi.append(fyi_item)
+
+    if reclassified:
+        print(f"  [reclassify] {reclassified} FYI item(s) moved to events")
+
+    merged["fyi"] = remaining_fyi
+    return merged
 
 
 def extract_from_post(post_text: str, team_name: str, child_name: str) -> dict:
@@ -199,18 +257,31 @@ def extract_from_post(post_text: str, team_name: str, child_name: str) -> dict:
         return {"homework": [], "parent_actions": [], "events": [], "fyi": []}
 
 
-def merge_extractions(extractions: list) -> dict:
+def merge_extractions(extractions: list, child_name: str = "") -> dict:
     merged = {"homework": [], "parent_actions": [], "events": [], "fyi": []}
-    seen_homework = set()
+    seen_homework = {}  # key → index in merged["homework"]
     seen_actions = set()
     seen_events = set()
 
+    hw_before = 0
+
     for ext in extractions:
+        hw_before += len(ext.get("homework", []))
+
         for hw in ext.get("homework", []):
             key = normalise_hw_key(hw)
-            if key and key not in seen_homework:
-                seen_homework.add(key)
+            if not key:
+                continue
+            if key not in seen_homework:
+                seen_homework[key] = len(merged["homework"])
                 merged["homework"].append(hw)
+            else:
+                # Keep the longer description
+                existing_idx = seen_homework[key]
+                existing_len = len(merged["homework"][existing_idx].get("description", ""))
+                new_len = len(hw.get("description", ""))
+                if new_len > existing_len:
+                    merged["homework"][existing_idx] = hw
 
         for act in ext.get("parent_actions", []):
             key = act.get("action", "")[:40].lower()
@@ -233,55 +304,93 @@ def merge_extractions(extractions: list) -> dict:
 
         merged["fyi"].extend(ext.get("fyi", []))
 
+    hw_after = len(merged["homework"])
+    if child_name and hw_before != hw_after:
+        print(f"  [dedup] {child_name} homework: {hw_before} → {hw_after} items")
+
     urgency_order = {"high": 0, "medium": 1, "low": 2}
     merged["homework"].sort(key=lambda x: urgency_order.get(x.get("urgency", "low"), 2))
     merged["parent_actions"].sort(key=lambda x: urgency_order.get(x.get("urgency", "low"), 2))
 
+    merged = reclassify_fyi_as_events(merged)
+
     return merged
+
+
+def build_overview_line(prefix: str, hw: dict = None, action: dict = None, event: dict = None) -> str:
+    if hw:
+        subject = hw.get("subject", "")
+        desc = hw.get("description", "")
+        due = hw.get("due_date", "")
+
+        short = re.split(r'[:\-]|(?:\s+and\s+)|(?:\s+with\s+)', desc)[0].strip()
+        if len(short) > 60:
+            short = short[:57] + "..."
+
+        title = f"{subject}: {short}" if subject else short
+        date_str = f" — due {due}" if due else ""
+        return f"{prefix} {title}{date_str}"
+
+    if action:
+        act = action.get("action", "")
+        if len(act) > 70:
+            act = act[:67] + "..."
+        due = action.get("due_date", "")
+        date_str = f" — due {due}" if due else ""
+        return f"{prefix} {act}{date_str}"
+
+    if event:
+        name = event.get("name", "")
+        if len(name) > 70:
+            name = name[:67] + "..."
+        date = event.get("date", "")
+        date_str = f" — {date}" if date else ""
+        return f"{prefix} {name}{date_str}"
+
+    return ""
 
 
 def build_overview(merged: dict) -> list:
     lines = []
 
     for act in merged["parent_actions"]:
-        if act.get("urgency") == "high":
-            date_str = f" — due {act['due_date']}" if act.get("due_date") else ""
-            lines.append(f"🔴 {act['action']}{date_str}")
         if len(lines) >= 4:
-            return lines[:4]
+            break
+        if act.get("urgency") == "high":
+            lines.append(build_overview_line("🔴", action=act))
 
     for act in merged["parent_actions"]:
+        if len(lines) >= 4:
+            break
         if act.get("urgency") == "medium":
-            date_str = f" — due {act['due_date']}" if act.get("due_date") else ""
-            lines.append(f"🟡 {act['action']}{date_str}")
-        if len(lines) >= 4:
-            return lines[:4]
+            lines.append(build_overview_line("🟡", action=act))
 
     for hw in merged["homework"]:
+        if len(lines) >= 4:
+            break
         if hw.get("urgency") == "high":
-            subj = hw.get("subject", "")
-            desc = hw.get("description", "")
-            date_str = f" — due {hw['due_date']}" if hw.get("due_date") else ""
-            title = f"{subj}: {desc}" if subj else desc
-            lines.append(f"📝 {title}{date_str}")
-        if len(lines) >= 4:
-            return lines[:4]
+            lines.append(build_overview_line("📝", hw=hw))
 
     for hw in merged["homework"]:
-        if hw.get("urgency") in ("medium", "low"):
-            subj = hw.get("subject", "")
-            desc = hw.get("description", "")
-            date_str = f" — due {hw['due_date']}" if hw.get("due_date") else ""
-            title = f"{subj}: {desc}" if subj else desc
-            lines.append(f"📝 {title}{date_str}")
         if len(lines) >= 4:
-            return lines[:4]
+            break
+        if hw.get("urgency") == "medium":
+            lines.append(build_overview_line("📝", hw=hw))
+
+    for hw in merged["homework"]:
+        if len(lines) >= 4:
+            break
+        if hw.get("urgency") == "low":
+            lines.append(build_overview_line("📝", hw=hw))
 
     for evt in merged["events"]:
-        date_str = f" — {evt['date']}" if evt.get("date") else ""
-        lines.append(f"📅 {evt['name']}{date_str}")
         if len(lines) >= 4:
-            return lines[:4]
+            break
+        lines.append(build_overview_line("📅", event=evt))
+
+    lengths = [len(l) for l in lines]
+    if lengths:
+        print(f"  [overview] Line lengths: {lengths}")
 
     return lines[:4]
 
@@ -358,7 +467,7 @@ def process_child(child_name: str, child_data: dict) -> dict:
             all_extractions.append(extract_from_post(text, team_name, child_name))
             time.sleep(0.5)
 
-    merged = merge_extractions(all_extractions)
+    merged = merge_extractions(all_extractions, child_name)
 
     for section in ["homework", "parent_actions", "events", "fyi"]:
         for item in merged[section]:
