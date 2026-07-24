@@ -1,54 +1,19 @@
 {
-  "extracted_at": "2026-07-04T06:43:12+05:30",
+  "extracted_at": "2026-07-24T13:09:02+05:30",
   "source": "github_actions",
   "children": {
     "Mihika": {
       "homework": [
         {
-          "subject": "FLE",
-          "description": "Complete the worksheets uploaded under classwork",
-          "due_date": null,
+          "subject": "English - Novel Assessment (Of Mice and Men)",
+          "description": "Part 1: Submit minimum 2 meaningful annotations per page from the novel (annotations may include interesting vocabulary, figurative language, literary devices, symbols, themes, questions, predictions, connections, and personal reflections). Part 2: Create a creative presentation (PowerPoint or Chart) including: brief summary, main characters, major themes, timeline of key events, favourite scene/quotation with explanation, and personal reflection. Upload PPTs in the Assignment in English teams closer to due date.",
+          "due_date": "31 Aug 2026",
           "urgency": "medium",
           "source_platform": "Teams"
         },
         {
-          "subject": "FLE (French)",
-          "description": "Annotate the text while reading Unit 1.3",
-          "due_date": null,
-          "urgency": "low",
-          "source_platform": "Teams"
-        },
-        {
-          "subject": "Physics",
-          "description": "Complete WB Ex 3.1 ABC",
-          "due_date": null,
-          "urgency": "low",
-          "source_platform": "Teams"
-        },
-        {
-          "subject": "Math",
-          "description": "Complete workbook exercise 4.1",
-          "due_date": null,
-          "urgency": "low",
-          "source_platform": "Teams"
-        },
-        {
-          "subject": "Physics",
-          "description": "Complete WB Ex: 3.1 A,B",
-          "due_date": null,
-          "urgency": "low",
-          "source_platform": "Teams"
-        },
-        {
-          "subject": "Art",
-          "description": "Find at least 4 objects that are basic forms and set them up in an interesting composition and create a pencil drawing from direct observation",
-          "due_date": null,
-          "urgency": "low",
-          "source_platform": "Teams"
-        },
-        {
-          "subject": "Community Service",
-          "description": "Fill in reflection form about community service initiatives - share feedback on experiences, what was enjoyed/meaningful, challenges faced, and suggestions for improvement",
+          "subject": "FLE (French Language)",
+          "description": "Make a note of daily vocabulary from the uploaded excel sheet (Vocabulary Voyage) behind the notebook",
           "due_date": null,
           "urgency": "low",
           "source_platform": "Teams"
@@ -56,25 +21,19 @@
       ],
       "parent_actions": [
         {
-          "action": "Submit Expression of Interest Form for TCS InQuizitive 2026 quiz competition if Mihika is interested in participating",
-          "due_date": "26 Jun 2026",
-          "urgency": "low",
+          "action": "Register Mihika for Indian Academic Championship (INDAC) 2026-27 \u2014 Online Regional Qualifying Exam (ORQE) in Science, History, or Geography. Registration link: https://programs.live.uniquotient.com/program/1399482",
+          "due_date": null,
+          "urgency": "medium",
           "source_platform": "Teams"
         },
         {
-          "action": "Fill out Community volunteer registration form to indicate interest in Middle School mentorship initiatives (Green Awareness Campaign, Sugar Awareness, etc.)",
+          "action": "Review and consider Mihika's participation in Middle School volunteer mentorship initiatives (Green Awareness Campaign and Sugar Awareness program); fill out Community volunteer registration form if interested",
           "due_date": null,
           "urgency": "low",
           "source_platform": "Teams"
         },
         {
-          "action": "Check the folder for sugar awareness pictures and inform teacher if any section is pending",
-          "due_date": null,
-          "urgency": "low",
-          "source_platform": "Teams"
-        },
-        {
-          "action": "Review First Aid For All Initiative volunteer opportunity and discuss with Mihika if interested in volunteering",
+          "action": "Purchase Casio fx-991ES PLUS (2nd Edition) scientific calculator for Mihika if she doesn't have one",
           "due_date": null,
           "urgency": "low",
           "source_platform": "Teams"
@@ -82,184 +41,203 @@
       ],
       "events": [
         {
-          "name": "Grade 8E Class",
-          "date": "04 Jul 2026",
-          "details": "Live class meeting with Mr. Devanjay",
-          "preparation": "Join meeting via Teams link",
+          "name": "Novel Assessment \u2013 Of Mice and Men",
+          "date": "31 Aug 2026",
+          "details": "Assessment conducted during English lesson in last week of August 2026. Two parts: Part 1 - Annotations (10 marks), Part 2 - Creative Presentation (10 marks). Creativity, organisation, clarity, content accuracy, and presentation will be considered.",
+          "preparation": "Begin preparing in advance. Submit annotations and prepare creative presentation (PowerPoint or Chart).",
           "source_platform": "Teams"
         },
         {
-          "name": "TCS InQuizitive 2026",
+          "name": "Indian Academic Championship (INDAC) 2026-27 \u2014 Online Regional Qualifying Exam (ORQE)",
           "date": null,
-          "details": "National-level school quiz competition covering Current Affairs, Science & Technology, AI & Innovation, History, Sports, Environment & Sustainability, Arts & Culture, and General Knowledge. Team participation with a friend.",
-          "preparation": "Complete Expression of Interest Form by 26 Jun 2026",
-          "source_platform": "Teams"
-        },
-        {
-          "name": "Lit Sanctum 2026-27 Preliminary Round",
-          "date": null,
-          "details": "Preliminary round results announced. Finalists have been selected. Final round instructions will be shared with finalists shortly.",
-          "preparation": null,
-          "source_platform": "Teams"
-        },
-        {
-          "name": "Thanksgiving Day Volunteering Initiative",
-          "date": null,
-          "details": "Middle school students (like Mihika) are invited to volunteer as mentors to lead 8-10 minute sessions on gratitude for Early Years to Grade 2 students. Sessions will be held during Class Teacher Time (CTT) on 26th November (EY classes) and 27th November (Grade 1-2 classes). Volunteers can team up in pairs and visit one or two classes per day. Students will help young learners understand the importance of gratitude before they deliver handmade greeting cards to support staff on 27th or 28th November.",
-          "preparation": "Prepare to lead a child-friendly session using a simple PPT about gratitude; can invite friends to form pairs",
-          "source_platform": "Teams"
-        },
-        {
-          "name": "Green Awareness Campaign Mentorship Initiative",
-          "date": null,
-          "details": "Middle School volunteers will mentor Early Years and Primary learners in environmental responsibility and sustainability. Includes hands-on sapling/seed planting activity and PPT presentation about environmental protection.",
-          "preparation": "Sessions during CTT; specific dates to be communicated later",
-          "source_platform": "Teams"
-        },
-        {
-          "name": "Sugar Awareness Mentorship Initiative",
-          "date": null,
-          "details": "Middle School volunteers will mentor students on making healthier choices and understanding the impact of excessive sugar consumption on well-being.",
-          "preparation": "Sessions during CTT; specific dates to be communicated later",
+          "details": "Free first round. Students need to score 50% or above to advance to Regionals. Competitions include History Bee, Geography Bee, Science Bee, and History Bowl. Top performers can qualify to represent India at Asian Academic Championships in Thailand or International History Olympiad in Berlin, Germany.",
+          "preparation": "Register for the exam at https://programs.live.uniquotient.com/program/1399482",
           "source_platform": "Teams"
         }
       ],
       "fyi": [
         {
-          "summary": "Humanities lesson included plotting climate graph on graph paper",
+          "summary": "Middle School Volunteers programme is open again for the year. Students interested need to message with full name, grade, section, and INSMI ID.",
           "source_platform": "Teams"
         },
         {
-          "summary": "PA (Performing Arts) lessons covered: Drums - identifying drum kit parts and sight-reading; Electronic Synthesiser - hand coordination exercises and G major scale; Guitar - chromatic scale practice (target: 20 times non-stop)",
+          "summary": "Post is about another student (Samaira Bose, 8E) \u2014 not relevant to Mihika's parent",
           "source_platform": "Teams"
         },
         {
-          "summary": "Bio/Chem class notes were taken in notebooks",
+          "summary": "Student identifier: Nitya Arla - 8E, INSMI001684. This appears to be a student record or roster entry, not a message requiring parent action.",
           "source_platform": "Teams"
         },
         {
-          "summary": "Math lessons covered multiplying and dividing integers and decimals by positive and negative powers of 10, and started textbook exercise 4.1",
+          "summary": "Community Service initiative 'Our School, Our Responsibility' launched for middle school. Volunteers needed to visit classes EY-Grade 8 during CTT periods to inform about classroom cleanliness monitoring and monthly certificates. Mihika can volunteer by contacting Chaitali Mukherjee.",
           "source_platform": "Teams"
         },
         {
-          "summary": "Physics lesson completed topic 3.1 questions with notebook correction",
+          "summary": "Mihika is organizing volunteer information and will provide a list of names by Friday. She is creating an announcement and will visit classes to inform students about volunteer opportunities.",
           "source_platform": "Teams"
         },
         {
-          "summary": "TCS InQuizitive 2026 is a prestigious national-level quiz competition open to students. Mihika can participate as part of a two-person team to represent Sancta Maria school.",
+          "summary": "Parent has given approval for Mihika's idea mentioned in a previous email",
           "source_platform": "Teams"
         },
         {
-          "summary": "Mihika participated in Lit Sanctum 2026-27 Preliminary Round. Results have been announced and finalists have been notified.",
+          "summary": "Middle School community service initiatives closing \u2013 students invited to fill out reflection form about their experiences and provide feedback for future improvements",
           "source_platform": "Teams"
         },
         {
-          "summary": "Physics: Learners completed class activity of calculating volume of regular and irregular objects",
+          "summary": "Parent volunteering inquiry for middle school \u2014 response requested from Samaira and Aadya",
           "source_platform": "Teams"
         },
         {
-          "summary": "Vowels and Matras practice done in the Notebook",
+          "summary": "Student inquiry about joining parent volunteering program",
           "source_platform": "Teams"
         },
         {
-          "summary": "Computing: Group activity on understanding tasks carried by operating system",
+          "summary": "Sugar awareness activity for EY learners scheduled for Tuesday 31 Mar (CTT time 8:30-8:50 AM). Mihika is listed as a volunteer. PPT link provided for reference.",
           "source_platform": "Teams"
         },
         {
-          "summary": "Humanities: Learners completed climate graph on graph paper and learnt how to interpret the graph",
+          "summary": "Student requesting pictures for sugar awareness activity",
           "source_platform": "Teams"
         },
         {
-          "summary": "Math: Learners introduced to Standard form for representing large and small numbers with notebook work",
+          "summary": "Sugar awareness pictures \u2014 check folder for pending sections",
           "source_platform": "Teams"
         },
         {
-          "summary": "Thanksgiving Day celebration planned for 27th-28th November. Early Years to Grade 2 students are making greeting cards for house-help, drivers, and support staff under art teacher guidance.",
+          "summary": "New mentorship initiatives planned for March: Green Awareness Campaign (environmental responsibility, sapling/seed planting, PPT presentation) and Sugar Awareness program (healthy choices education). Specific dates and sessions during CTT to be communicated later.",
           "source_platform": "Teams"
         },
         {
-          "summary": "Multiple new mentorship initiatives being planned for March for Early Years and Primary learners; additional initiatives being planned and will be communicated later",
+          "summary": "Teachers will upload materials soon",
           "source_platform": "Teams"
         },
         {
-          "summary": "EY3B is missing - student report in Middle school Volunteers team",
+          "summary": "Pictures from EY3A and B students and additional photos have been added to the main folder for viewing",
           "source_platform": "Teams"
         },
         {
-          "summary": "Teachers have been informed and will upload content soon",
+          "summary": "Recent: Term 1 FA - 1 (Math) was due 23 Jul 2026 \u2014 assessment has passed",
           "source_platform": "Teams"
         },
         {
-          "summary": "Pictures from EY3A and B classes have been added to the main folder. Check them out today.",
+          "summary": "Cambridge Mathematics Paper 2 requires a scientific calculator; recommended model is Casio fx-991ES PLUS (2nd Edition) for use in class and assessments",
           "source_platform": "Teams"
         },
         {
-          "summary": "Sugar awareness activity for EY learners scheduled for Tuesday, 31st March during CTT (8:30-8:50 AM). Mihika is involved as a volunteer. Reference PPT: https://docs.google.com/presentation/d/1X-WVaOefDSmVbDD9Qg7KZCpewlbKU-n56T6GVBKyHUc/edit?usp=sharing",
+          "summary": "Hindi notes attachment shared for Grade 8 English class",
           "source_platform": "Teams"
         },
         {
-          "summary": "Middle School Volunteers program wrapping up for the year. Teachers Chaitali and Rozy Ma'am requesting student reflections on community service initiatives throughout the year.",
+          "summary": "Post contains only a signature/administrative marker with no actionable content for Mihika",
           "source_platform": "Teams"
         },
         {
-          "summary": "Cambridge Mathematics Paper 2 requires Casio fx-991ES PLUS (2nd Edition) scientific calculator. Purchase link provided for new learners or those needing replacement.",
+          "summary": "Recent: Diagnostic Test for Grade 8 Hindi was conducted on 24 Jun 2026 during CTT. Syllabus: Unseen passage.",
           "source_platform": "Teams"
         },
         {
-          "summary": "Diagnostic Test for Grade 8 Hindi was scheduled for 24 Jun 2026 (past event - not included in upcoming events)",
+          "summary": "Mihika has access to Komodo Wellbeing platform. Login instructions provided: use school Microsoft ID (INSMI----@sanctamaria.in) and complete the survey upon first login.",
           "source_platform": "Teams"
         },
         {
-          "summary": "FLE vocabulary list for Mihika (Grade 8) - Words and meanings: taciturn (reserved), loquacious (talkative), obnoxious (annoying), serendipity (lucky chance), abominable (terrible), acrimonious (bitter/hostile)",
+          "summary": "Daily vocabulary has been uploaded as an excel sheet under classwork/Vocabulary Voyage",
           "source_platform": "Teams"
         },
         {
-          "summary": "FLE Unit 1.1 PPT has been uploaded under Classwork/Term 1 resources/Stage 9.1.1 PPT for reference",
+          "summary": "Vocabulary Voyage link has been updated and is now working. Students should access it via English Teams > Classwork > Vocabulary Voyage.",
           "source_platform": "Teams"
         },
         {
-          "summary": "FLE class resource shared: The Left Hand of Darkness by Ursula K. Le Guin Plot Summary from LitCharts",
+          "summary": "Student request: Mihika asked teacher Ms. Femina Shaikh to send vocab voyage materials from 19 Jun to 9 Jul",
           "source_platform": "Teams"
         },
         {
-          "summary": "Vocab Voyage vocabulary learning activity completed from 17 Jun 2026 to 19 Jun 2026. Words covered: atrocities, amplify, antagonism with meanings, usage examples, and synonyms.",
+          "summary": "Vocab Voyage material has been uploaded as a link by Ms. Femina Shaikh",
           "source_platform": "Teams"
         },
         {
-          "summary": "PPT from today's FLE class has been uploaded for reference",
+          "summary": "Mihika: FLE teacher Ms. Femina Shaikh shared descriptive writing resources (BBC Bitesize guide and IGCSE presentation) for students to review and practice in free time to improve descriptive writing skills.",
           "source_platform": "Teams"
         },
         {
-          "summary": "Grade 8 Future Pathways: First Aid For All Initiative - youth-led volunteer opportunity launched by alumna Ms. Aadya Agarwal. Students can register to volunteer and learn life-saving first aid skills. No prior medical background required. Registration form available.",
+          "summary": "Logic Olympiad information shared for Grade 8 students",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Mihika has submitted all quizzes to the locker for checking by the teacher",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "First Aid For All Initiative - youth-led volunteer opportunity launched by alumna Ms. Aadya Agarwal. Grade 8 students invited to join core team. No prior medical background required. Registration form available for interested students.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Learning opportunity mentioned as optional for student enrichment",
           "source_platform": "Teams"
         }
       ],
       "overview": [
-        "\ud83d\udcdd FLE: Complete the worksheets uploaded under classwork",
-        "\ud83d\udcdd FLE (French): Annotate the text while reading Unit 1.3",
-        "\ud83d\udcdd Physics: Complete WB Ex 3.1 ABC",
-        "\ud83d\udcdd Math: Complete workbook exercise 4.1"
+        "\ud83d\udfe1 Register Mihika for Indian Academic Championship (INDAC) 2026-27 \u2014 ...",
+        "\ud83d\udcdd English - Novel Assessment (Of Mice and Men): Part 1 \u2014 due 31 Aug 2026",
+        "\ud83d\udcdd FLE (French Language): Make a note of daily vocabulary from the uploaded excel s...",
+        "\ud83d\udcc5 Novel Assessment \u2013 Of Mice and Men \u2014 31 Aug 2026"
       ]
     },
     "Ananya": {
       "homework": [
         {
-          "subject": "English",
-          "description": "Read and Reflect: Science Fiction story 'LAFFF'",
-          "due_date": null,
-          "urgency": "medium",
+          "subject": "Humanities",
+          "description": "Biome Research project - Complete table for chosen biome (Desert, Forest, Grassland, or Tundra) with climate, location, plants, animals, and adaptations. Answer critical thinking questions in complete sentences. Create labeled drawings of one plant and one animal with adaptations. Write 4-5 sentence reflection on which biome you would visit and why.",
+          "due_date": "14 Jul 2026",
+          "urgency": "high",
           "source_platform": "Teams"
         },
         {
-          "subject": "Science",
-          "description": "Explore and construct both series and parallel circuits using Circuit Construction Kit: DC",
+          "subject": "Humanities",
+          "description": "Complete homework on Exploring the Biomes of Asia in Humanities notebook. Part A: Answer questions about four main biomes (Tropical Rainforest, Desert, Taiga, Tundra) - which is hottest, coldest, receives most rainfall, and which would you like to learn more about. Part B: Write 2-3 sentences imagining an adventure to one biome. Challenge: Draw one biome and label two things you would find there.",
+          "due_date": "21 Jul 2026",
+          "urgency": "high",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Humanities",
+          "description": "Complete homework in Humanities notebook. Write date and title: The Four Major Biomes of Asia. Write name of each biome as heading. Answer both Critical Thinking and Think and Reflect questions for each biome in complete sentences, 2-3 sentences per answer. Do only 2 questions of the Biome you are working on in class (Tropical Rainforest, Desert, Taiga, or Tundra). May research the topic if needed.",
+          "due_date": "28 Jul 2026",
+          "urgency": "high",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "English",
+          "description": "Read extracts from Helen Fox's story 'Eager' (pages 61, 63, 66, 67, 70, 72, 74, 78) and answer 11 questions on A4 paper",
+          "due_date": "22 Jul 2026",
+          "urgency": "high",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Humanities",
+          "description": "Complete homework in Humanities notebook on Exploring the Biomes of Asia. Part A: Answer questions about four main biomes (Tropical Rainforest, Desert, Taiga, Tundra) - which would be hottest, coldest, receives most rainfall, and which to learn more about. Part B: Write 2-3 sentences imagining an adventure to one biome. Challenge: Draw one biome and label two things you would find there.",
+          "due_date": "21 Jul 2026",
+          "urgency": "high",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Humanities",
+          "description": "The Four Major Biomes of Asia - Complete in HM notebook. Write date and title. For each assigned biome, answer 2 Critical Thinking and Think and Reflect questions in 2-3 complete sentences each. May research if needed.",
+          "due_date": "28 Jul 2026",
+          "urgency": "high",
+          "source_platform": "Teams"
+        },
+        {
+          "subject": "Hindi",
+          "description": "\u092d\u093e\u0917 \u2013 A : \u0930\u093f\u0915\u094d\u0924 \u0938\u094d\u0925\u093e\u0928 \u092d\u0930\u093f\u090f (Fill in the blanks with correct pronouns). \u092d\u093e\u0917 \u2013 B : \u0938\u0902\u091c\u094d\u091e\u093e \u0915\u0947 \u0938\u094d\u0925\u093e\u0928 \u092a\u0930 \u0938\u0930\u094d\u0935\u0928\u093e\u092e \u0932\u093f\u0916\u093f\u090f (Replace nouns with pronouns). \u092d\u093e\u0917 \u2013 C : \u0938\u0939\u0940 \u0938\u0930\u094d\u0935\u0928\u093e\u092e \u092a\u0930 \u2714 \u0932\u0917\u093e\u0907\u090f (Mark correct pronouns). \u092d\u093e\u0917 \u2013 D : \u0935\u093e\u0915\u094d\u092f \u092c\u0928\u093e\u0907\u090f (Make sentences with given pronouns). \u091a\u0941\u0928\u094c\u0924\u0940 \u092a\u094d\u0930\u0936\u094d\u0928: \u0928\u0940\u091a\u0947 \u0926\u093f\u090f \u0917\u090f \u0905\u0928\u0941\u091a\u094d\u091b\u0947\u0926 \u092e\u0947\u0902 \u0938\u0930\u094d\u0935\u0928\u093e\u092e \u0936\u092c\u094d\u0926\u094b\u0902 \u0915\u094b \u0918\u0947\u0930\u093f\u090f (Circle pronouns in the given paragraph).",
           "due_date": null,
           "urgency": "low",
           "source_platform": "Teams"
         },
         {
-          "subject": "English",
-          "description": "Research a favourite author and create an Author Spotlight chart on chart paper including: author's name and picture, short biography, notable works, favourite book and why, a meaningful quote, 3-5 interesting facts about the author",
+          "subject": "Science",
+          "description": "Explore and try constructing both series and parallel circuits",
           "due_date": null,
           "urgency": "low",
           "source_platform": "Teams"
@@ -267,81 +245,159 @@
       ],
       "parent_actions": [
         {
-          "action": "Complete and submit Club Selection Form for Ananya",
-          "due_date": "29 Jun 2026",
+          "action": "Ensure Ananya completes the wellbeing survey on Komodo platform using school Microsoft ID",
+          "due_date": "24 Jul 2026",
           "urgency": "high",
           "source_platform": "Teams"
         },
         {
-          "action": "Ensure Ananya submits nomination for Lit Sanctum's Battle of the Skits preliminary round if interested",
-          "due_date": "04 Jul 2026",
-          "urgency": "high",
-          "source_platform": "Teams"
-        },
-        {
-          "action": "Fill out Expression of Interest form for Lit Sanctum's onstage event 'Battle of the Skits' or comment 'I am interested' if form is inaccessible",
-          "due_date": "18 Jun 2026",
+          "action": "Keep workbooks at home by default; only bring to school if specifically requested by teacher in advance through classroom instructions or daily logs",
+          "due_date": null,
           "urgency": "low",
           "source_platform": "Teams"
         }
       ],
       "events": [
         {
-          "name": "Battle of the Skits - Lit Sanctum Onstage Event",
-          "date": null,
-          "details": "Expression of Interest form deadline is 18 Jun 2026 at 10:00 pm",
-          "preparation": "Complete Expression of Interest form or comment interest",
+          "name": "Battle of the Skits Final Round",
+          "date": "25 Jul 2026",
+          "details": "Grade 5 finalists performing creativity, teamwork, expression, and storytelling skills on stage",
+          "preparation": null,
           "source_platform": "Teams"
         },
         {
-          "name": "Lit Sanctum's Battle of the Skits - Nominations Deadline",
-          "date": "04 Jul 2026",
-          "details": "Preliminary round nominations close at 2:30 p.m.",
-          "preparation": "Student should submit nomination before 2:30 p.m. if participating",
+          "name": "Contentio Mathematica \u2013 Preliminary Round (Grade 5)",
+          "date": "27 Jul 2026",
+          "details": "Mathematics quiz for Grades 1 to 5. Questions based on topics covered in previous grade level and current grade up to 15 Jul 2026. Syllabus includes: Previous Grade \u2013 Unit 2 (2D shapes and patterns), Unit 6 (3D shapes), Unit 7 (Fractions, decimals and percentages), Unit 11 (Multiplication and division), Unit 16 (Time), Unit 17 (Number and the Laws of Arithmetic). Current Grade \u2013 Unit 1 (The Number system), Unit 2 (Numbers and Sequences), Unit 4 (Addition and Subtraction -1). Semi-finalists and finalists will represent their House in Grand Finale.",
+          "preparation": "Revise all listed units and topics",
           "source_platform": "Teams"
         },
         {
-          "name": "Battle of the Skits Preliminary Round",
-          "date": null,
-          "details": "Ananya is participating in pairs for Lit Sanctum 2026. Preliminary round auditions were scheduled for 29th and 30th June 2026. Individual learners will be assessed on voice modulation, expression, body language, confidence, creativity, and preparation. Evaluation criteria include: clear message/lesson, voice and expression, body language and movement, teamwork, creativity and humour, preparation and timing.",
-          "preparation": "Ananya should work with her partner during school hours to plan the skit, work on scripts, demonstrate strong voice modulation, expression, body language, confidence, creativity, and preparation.",
+          "name": "Contentio Mathematica \u2013 Grand Finale (Grade 5)",
+          "date": "6 Aug 2026",
+          "details": "Grand Finale for semi-finalists and finalists from Preliminary Round. Winners will represent their House.",
+          "preparation": null,
           "source_platform": "Teams"
         },
         {
-          "name": "Lit Sanctum Week - Author Spotlight Literary Display",
+          "name": "Contentio Mathematica is a mathematics competition designed to challenge logical thinking and streng",
           "date": null,
-          "details": "Grade 5 learners will present completed Author Spotlight charts as part of a vibrant literary display celebrating authors. This is not a competition but an inclusive event where every learner's work contributes to the display.",
-          "preparation": "Support child in researching and creating the Author Spotlight chart with required elements: author name and picture, biography, notable works, favourite book explanation, author quote, and interesting facts",
+          "details": "",
+          "preparation": null,
           "source_platform": "Teams"
         }
       ],
       "fyi": [
         {
-          "summary": "Annual club model adopted for 2026-27. Each club has limited seats, allocated on first-come, first-served basis. Parents encouraged to explore club options with child. Some clubs aligned with ISP programmes. ISP Artist and Chess Masters open to all Primary learners with progression through rounds based on performance.",
+          "summary": "PE and Art periods replaced with regular academic lessons today. Students should join classes on time using respective Subject Teams rooms.",
           "source_platform": "Teams"
         },
         {
-          "summary": "Audition dates for Battle of the Skits Preliminary Round have been revised to 29th and 30th June 2026. Some learners are grouped into trios where even pairing was not possible. Strongest individual performers from each house will advance to the Grand Finale.",
+          "summary": "Student reported missing link for 2L",
           "source_platform": "Teams"
         },
         {
-          "summary": "Weekly reading homework will be uploaded every Wednesday under 'Read and Reflect' module in English Teams Classwork tab",
+          "summary": "Student Rudra did not receive Hindi Resource/Text book; teacher has been asked to issue a copy in next class",
           "source_platform": "Teams"
         },
         {
-          "summary": "Author Spotlight is part of Lit Sanctum 2026 alongside Battle of the Skits. It invites Grade 5 learners to explore books through research, reflection, and creativity to celebrate inspiring authors.",
+          "summary": "Teacher will provide Grammar and Pankhudiya textbook on Monday",
           "source_platform": "Teams"
         },
         {
-          "summary": "Grade 5D Mathematics: Workbooks introduced for additional home practice. Teachers will assign regular homework in workbooks. Answer keys will be uploaded to Teams after each unit completion for self-reflection. Keep workbooks at home by default unless teacher requests otherwise to reduce school bag weight.",
+          "summary": "Homework submission guidelines: Complete work neatly in Humanities notebook, use colours and labels for creative task, include name/class/date at top of page",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Technical note: Page refresh may be needed to view content",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Teacher has uploaded an updated document as previously discussed",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Ananya is not listed as a finalist in the Battle of the Skits Final Round",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Student unable to locate homework post on Teams; technical issue reported",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Student unable to access homework pages - technical issue reported to teacher",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Daily log page 8 has first task on adjectives. Teacher requests learners to comment queries under existing posts rather than creating new ones on general channel.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "PPTs, worksheets with answer keys, and softcopies of textbook and workbook have been uploaded to Classwork module in English Teams",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Grade 5D English reading plan for 2026-27: Wednesday reading homework assignments will be posted in Teams; learners maintain reading logs; dedicated ER (English Reading) lessons explore selected books; DEAR (Drop Everything and Read) programme runs during CTT time; Book of the Month highlighted each month to foster shared reading experiences",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Recent: English homework for 'Eager' story was due 22 Jul 2026 (overdue as of 24 Jul 2026)",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Optional English practice worksheets (soft copies) available on Teams platform for Ananya's independent practice. Suggested answers shared 1-2 days after. Not mandatory.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Grade 5D Mathematics: Teachers will assign regular homework in workbooks for extra practice. Answer keys will be uploaded to Teams after each unit is completed for self-reflection. Teachers will clarify workbook doubts during class discussions.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Mathematics class work PDFs posted under 'Grade 4 - Contentio Units' in class work section",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "FA-01 (Grade 5D Mathematics) was due 19 Jul 2026 \u2014 this deadline has passed",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Message about another student (Thiran) regarding attendance and assignment completion - not applicable to Ananya",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Recent: FA (Formative Assessment) was conducted on 16 Jul 2026. Thiran was present.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Past homework assignment for Ananya (Grade 5D Humanities): Biome Research project with three parts (research table, critical thinking questions, creative drawing task) and reflection. Due date was 14 Jul 2026 (Tuesday) \u2014 already passed.",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Anvitha missed a week of school due to being out of station; will submit work tomorrow",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Recent: Grade 5D Humanities homework on Biomes of Asia was due 21 Jul 2026 (has passed)",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Student request: Teacher to post homework in daily log. Student mentions HW due 21-26 (dates unclear/past).",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Students only need to answer 2 questions from the biome they are working on in class, not all biomes",
+          "source_platform": "Teams"
+        },
+        {
+          "summary": "Student chat - Ananya asking teacher about biome project work",
           "source_platform": "Teams"
         }
       ],
       "overview": [
-        "\ud83d\udd34 Complete and submit Club Selection Form for Ananya \u2014 due 29 Jun 2026",
-        "\ud83d\udd34 Ensure Ananya submits nomination for Lit Sanctum's Battle of the Skits preliminary round if interested \u2014 due 04 Jul 2026",
-        "\ud83d\udcdd English: Read and Reflect: Science Fiction story 'LAFFF'",
-        "\ud83d\udcdd Science: Explore and construct both series and parallel circuits using Circuit Construction Kit: DC"
+        "\ud83d\udd34 Ensure Ananya completes the wellbeing survey on Komodo platform usi... \u2014 due 24 Jul 2026",
+        "\ud83d\udcdd Humanities: Biome Research project \u2014 due 14 Jul 2026",
+        "\ud83d\udcdd Humanities: Complete homework on Exploring the Biomes of Asia in Huma... \u2014 due 21 Jul 2026",
+        "\ud83d\udcdd Humanities: Complete homework in Humanities notebook. Write date \u2014 due 28 Jul 2026"
       ]
     }
   }
